@@ -1,0 +1,3 @@
+[submodule "sam4n_base"]
+	path = sam4n_base
+	url = https://github.com/bjornwilliam/sam4n_base.git
