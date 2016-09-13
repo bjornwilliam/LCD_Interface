@@ -133,13 +133,34 @@
     <Compile Include="Device_Startup\startup_sam4n.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Device_Startup\system_sam4n.c">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="FreeRTOSConfig.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="hardwareInit.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hardwareInit.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4n_base\Drivers\eefc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4n_base\Drivers\eefc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4n_base\Drivers\pio.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4n_base\Drivers\pio.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4n_base\Drivers\pmc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4n_base\Drivers\pmc.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="sam4n_base\FreeRTOS\croutine.c">
@@ -215,6 +236,7 @@
   <ItemGroup>
     <Folder Include="Device_Startup\" />
     <Folder Include="sam4n_base\" />
+    <Folder Include="sam4n_base\Drivers\" />
     <Folder Include="sam4n_base\FreeRTOS\" />
     <Folder Include="sam4n_base\FreeRTOS\include\" />
     <Folder Include="sam4n_base\FreeRTOS\portable\" />

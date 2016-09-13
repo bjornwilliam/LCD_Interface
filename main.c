@@ -4,16 +4,18 @@
 
 #include <sam.h>
 
+#include "hardwareInit.h"
+
+#include "Task_BlinkLed/Task_BlinkLed.h"
 
 int main(void)
 {
     /* Initialize the SAM system */
-    SystemInit();
-
-    /* Replace with your application code */
-    while (1) 
-    {
-    }
+    //SystemInit();
+	hardwareInit();
+	
+	xTaskCreate(Task_BlinkLed,"blink",300, NULL, tskIDLE_PRIORITY + 2,NULL);
+	vTaskStartScheduler();
 }
 
 
