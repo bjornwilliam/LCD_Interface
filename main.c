@@ -7,6 +7,7 @@
 #include "hardwareInit.h"
 
 #include "Task_BlinkLed/Task_BlinkLed.h"
+#include "Task_TestScreen/Task_TestScreen.h"
 
 int main(void)
 {
@@ -14,7 +15,8 @@ int main(void)
     //SystemInit();
 	hardwareInit();
 	
-	xTaskCreate(Task_BlinkLed,"blink",300, NULL, tskIDLE_PRIORITY + 2,NULL);
+	//xTaskCreate(Task_BlinkLed,"blink",300, NULL, tskIDLE_PRIORITY + 2,NULL);
+	xTaskCreate(Task_TestScreen,"screen",300, NULL, tskIDLE_PRIORITY + 2,NULL);
 	vTaskStartScheduler();
 }
 

@@ -20,12 +20,12 @@
     <OverrideVtor>false</OverrideVtor>
     <CacheFlash>true</CacheFlash>
     <ProgFlashFromRam>true</ProgFlashFromRam>
-    <RamSnippetAddress />
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
     <UncachedRange />
     <preserveEEPROM>true</preserveEEPROM>
-    <OverrideVtorValue />
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
     <BootSegment>2</BootSegment>
-    <eraseonlaunchrule>1</eraseonlaunchrule>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
     <ExternalProgrammingToolCommand />
     <AsfFrameworkConfig>
       <framework-data xmlns="">
@@ -39,6 +39,22 @@
         </dependencies>
       </framework-data>
     </AsfFrameworkConfig>
+    <avrtool>com.atmel.avrdbg.tool.edbg</avrtool>
+    <avrtoolserialnumber>ATML1967020200000008</avrtoolserialnumber>
+    <avrdeviceexpectedsignature>0x29560CE0</avrdeviceexpectedsignature>
+    <avrtoolinterface>SWD</avrtoolinterface>
+    <com_atmel_avrdbg_tool_edbg>
+      <ToolOptions>
+        <InterfaceProperties>
+          <SwdClock>2000000</SwdClock>
+        </InterfaceProperties>
+        <InterfaceName>SWD</InterfaceName>
+      </ToolOptions>
+      <ToolType>com.atmel.avrdbg.tool.edbg</ToolType>
+      <ToolNumber>ATML1967020200000008</ToolNumber>
+      <ToolName>EDBG</ToolName>
+    </com_atmel_avrdbg_tool_edbg>
+    <avrtoolinterfaceclock>2000000</avrtoolinterfaceclock>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
@@ -145,10 +161,34 @@
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="sam4n_base\Drivers\delay.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4n_base\Drivers\delay.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="sam4n_base\Drivers\eefc.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="sam4n_base\Drivers\eefc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4n_base\Drivers\ili9341\ili9341.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4n_base\Drivers\ili9341\ili9341.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4n_base\Drivers\ili9341\ili9341_pioInterface.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4n_base\Drivers\ili9341\ili9341_ref.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4n_base\Drivers\ili9341\ili9341_ref.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4n_base\Drivers\ili9341\ili9341_regs.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="sam4n_base\Drivers\pio.c">
@@ -161,6 +201,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="sam4n_base\Drivers\pmc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4n_base\Drivers\spi.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4n_base\Drivers\spi.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="sam4n_base\FreeRTOS\croutine.c">
@@ -232,17 +278,32 @@
     <Compile Include="sam4n_base\FreeRTOS\timers.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Task_BlinkLed\Task_BlinkLed.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Task_BlinkLed\Task_BlinkLed.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Task_TestScreen\Task_TestScreen.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Task_TestScreen\Task_TestScreen.h">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Device_Startup\" />
+    <Folder Include="Task_TestScreen" />
     <Folder Include="sam4n_base\" />
     <Folder Include="sam4n_base\Drivers\" />
+    <Folder Include="sam4n_base\Drivers\ili9341\" />
     <Folder Include="sam4n_base\FreeRTOS\" />
     <Folder Include="sam4n_base\FreeRTOS\include\" />
     <Folder Include="sam4n_base\FreeRTOS\portable\" />
     <Folder Include="sam4n_base\FreeRTOS\portable\GCC\" />
     <Folder Include="sam4n_base\FreeRTOS\portable\GCC\ARM_CM3\" />
     <Folder Include="sam4n_base\FreeRTOS\portable\MemMang\" />
+    <Folder Include="Task_BlinkLed" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Device_Startup\sam4n16c_flash.ld">
