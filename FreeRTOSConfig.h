@@ -71,6 +71,7 @@
 #ifndef FREERTOS_CONFIG_H
 #define FREERTOS_CONFIG_H
 
+#include "MCU_config.h"
 /*
  * The following #error directive is to remind users that a batch file must be
  * executed prior to this project being built.  Once it has been executed
@@ -95,7 +96,7 @@
 #define configUSE_PORT_OPTIMISED_TASK_SELECTION	1
 #define configUSE_IDLE_HOOK						0
 #define configUSE_TICK_HOOK						0
-#define configCPU_CLOCK_HZ						( 100000000)
+#define configCPU_CLOCK_HZ						( CPU_CLOCK_FREQ_HZ)
 #define configTICK_RATE_HZ						( ( TickType_t ) 1000 )
 #define configMAX_PRIORITIES					( 5 )
 #define configMINIMAL_STACK_SIZE				( ( unsigned short ) 130 )
