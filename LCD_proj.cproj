@@ -182,6 +182,12 @@
     <Compile Include="sam4n_base\Drivers\eefc.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="sam4n_base\Drivers\FT6206_capTouch\FT6206.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sam4n_base\Drivers\FT6206_capTouch\FT6206.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="sam4n_base\Drivers\ili9341\ili9341.c">
       <SubType>compile</SubType>
     </Compile>
@@ -315,6 +321,7 @@
   <ItemGroup>
     <Folder Include="Device_Startup\" />
     <Folder Include="Bitmaps" />
+    <Folder Include="sam4n_base\Drivers\FT6206_capTouch" />
     <Folder Include="Task_TestScreen" />
     <Folder Include="sam4n_base\" />
     <Folder Include="sam4n_base\Drivers\" />
