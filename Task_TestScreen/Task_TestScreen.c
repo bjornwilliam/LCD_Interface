@@ -9,11 +9,15 @@
 void Task_TestScreen() {
 	xSemaphoreTake(spi_handlerIsDoneSempahore,0);
 	ili9341_init();
+	vTaskDelay(10/portTICK_RATE_MS);
+	//ili9341_drawPixel(50,50,500);
+	ili9341_drawVLine(50,50,60,0x40A9A6);
 	
 	while(1) {		
-		ili9341_enter_standby();
-		
-		vTaskDelay(1000);
+// 		ili9341_enter_standby();		
+// 		vTaskDelay(1000/portTICK_RATE_MS);
+// 		ili9341_exit_standby();
+ 		vTaskDelay(1000/portTICK_RATE_MS);
 		
 	}
 	

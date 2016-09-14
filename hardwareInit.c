@@ -11,6 +11,7 @@
 
 
 void hardwareInit() {
+	WDT->WDT_MR |= 1<<15; // Disable Watch dog timer
 	// PMC 
 	init_flash();
 	struct PmcInit pmcInit = {
@@ -35,7 +36,7 @@ void hardwareInit() {
 	struct SpiSlaveSettings Spi_cs1 = {
 		.chip_select = NPCS1,
 		.bits_per_transfer = 9,
-		.delay_between_two_consecutive_transfers = 0,
+		.delay_between_two_consecutive_transfers = 2,
 		.peripheral_clock_hz = 100000000,
 		.spi_baudRate_hz = 10000000,
 		.time_until_first_valid_SPCK = 0,
