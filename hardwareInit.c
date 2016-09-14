@@ -36,9 +36,9 @@ void hardwareInit() {
 	struct SpiSlaveSettings Spi_cs1 = {
 		.chip_select = NPCS1,
 		.bits_per_transfer = 9,
-		.delay_between_two_consecutive_transfers = 2,
+		.delay_between_two_consecutive_transfers = 0,
 		.peripheral_clock_hz = 100000000,
-		.spi_baudRate_hz = 10000000,
+		.spi_baudRate_hz = 24000000,
 		.time_until_first_valid_SPCK = 0,
 		.spi_mode = MODE_0
 	};
@@ -46,8 +46,7 @@ void hardwareInit() {
 	spi_mutex					= xSemaphoreCreateMutex();
 	spi_masterInit(SpiMasterSettings);
 	spi_chipSelectInit(Spi_cs1);
-	//SPI->SPI_MR |= 1 << 7;
+	//SPI->SPI_MR |= 1 << 7; // LOCAL LOOPBACK
 	//SPI->SPI_CR |= 1 << 24;
-	
-	
+
 }

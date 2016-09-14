@@ -14,7 +14,7 @@ int main(void)
     /* Initialize the SAM system */
 	hardwareInit();
 	
-	xTaskCreate(Task_BlinkLed,"blink",300, NULL, tskIDLE_PRIORITY + 2,NULL);
+	//xTaskCreate(Task_BlinkLed,"blink",300, NULL, tskIDLE_PRIORITY + 2,NULL);
 	xTaskCreate(Task_TestScreen,"screen",300, NULL, tskIDLE_PRIORITY + 2,NULL);
 	vTaskStartScheduler();
 }

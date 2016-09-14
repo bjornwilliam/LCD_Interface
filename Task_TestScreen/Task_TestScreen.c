@@ -9,7 +9,9 @@
 void Task_TestScreen() {
 	xSemaphoreTake(spi_handlerIsDoneSempahore,0);
 	ili9341_init();
-	vTaskDelay(10/portTICK_RATE_MS);
+	vTaskDelay(150/portTICK_RATE_MS);
+	ili9341_readManufactorID();
+	
 	//ili9341_drawPixel(50,50,500);
 	ili9341_drawVLine(50,50,60,0x40A9A6);
 	
