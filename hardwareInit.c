@@ -58,5 +58,5 @@ void hardwareInit() {
 		.speed = 160000,
 		.smbus = 0
 		};
-	twi_init(twi_options);
+	twi_init(TWI2, twi_options);
 }
